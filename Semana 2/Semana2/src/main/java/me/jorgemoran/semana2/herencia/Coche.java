@@ -7,7 +7,9 @@ public class Coche extends Vehiculo {
         super(marca);
         this.numeroDePuertas = numeroDePuertas;
     }
-
+    public void parquearParalelo(){
+        System.out.println("Estoy parqueandome en paralelo");
+    }
     // Implementación del método abstracto, mostrando Polimorfismo
     @Override
     public void mover() {

@@ -26,4 +26,20 @@ public class Persona {
     public void mostrarInfo() {
         System.out.println("Nombre: " + nombre + ", Edad: " + edad);
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre.toUpperCase();
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "nombre='" + nombre + '\'' +
+                ", edad=" + edad +
+                '}';
+    }
 }
