@@ -8,7 +8,12 @@ public class Main {
 
         miCuentaAhorros.depositar(200);
         miCuentaCorriente.retirar(600);
-
+        if(miCuentaAhorros instanceof CuentaAhorros){
+            System.out.println(miCuentaAhorros.toString() + " es de ahorros");
+        }
+        if(miCuentaAhorros instanceof CuentaCorriente){
+            System.out.println(miCuentaAhorros + " es corriente");
+        }
         System.out.println("Saldo cuenta de ahorros: " + miCuentaAhorros.consultarSaldo());
         System.out.println("Saldo cuenta corriente: " + miCuentaCorriente.consultarSaldo());
     }

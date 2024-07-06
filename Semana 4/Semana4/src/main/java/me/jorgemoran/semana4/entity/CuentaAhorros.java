@@ -13,5 +13,12 @@ public class CuentaAhorros extends CuentaBancaria {
         double interes = saldo * tasaInteres;
         depositar(interes);
     }
+
+    @Override
+    public String toString() {
+        return "CuentaAhorros{" +
+                "tasaInteres=" + tasaInteres +
+                '}';
+    }
 }
 

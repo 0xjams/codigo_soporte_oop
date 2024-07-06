@@ -11,14 +11,32 @@ public class Animal {
     public boolean isDomestic;
 
     // Constructor
-    public Animal(String name, int age, boolean isDomestic) {
-        this.name = name;
+    public Animal(String mName, int age, boolean isDomestic) {
+        name = mName;
         this.age = age;
         this.isDomestic = isDomestic;
     }
 
+    public Animal() {
+
+    }
+
+    public Animal(String name) {
+        this.name = name;
+    }
+
     // Método con modificador default
     void displayInfo() {
-        System.out.println("Nombre: " + name + ", Edad: " + age + ", Doméstico: " + isDomestic);
+        System.out.println("Nombre: " + this.name + ", Edad: " + this.age + ", Doméstico: " + this.isDomestic);
     }
+
+    void displayInfo(String mensaje){
+        this.displayInfo();
+        System.out.println(mensaje);
+    }
+
+    public void otraFuncion(){
+        this.displayInfo();
+    }
+
 }
