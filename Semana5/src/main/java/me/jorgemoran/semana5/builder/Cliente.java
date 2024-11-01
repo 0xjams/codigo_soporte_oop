@@ -5,7 +5,9 @@ public class Cliente {
         Cocina cocina = new Cocina();
         Pizza.PizzaBuilder builder = new HawaiianPizzaBuilder();
 
-        cocina.setBuilder(builder);
+        //cocina.setBuilder(builder);
+        //builder.setMasa("crispy");
+        //builder.setSalsa("ligera");
         cocina.setBuilder(builder.setMasa("crispy").setSalsa("ligera")); // Estableciendo propiedades
         Pizza pizza = cocina.getPizza();
 

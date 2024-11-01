@@ -4,11 +4,12 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URI;
 
 public class GetRequest {
     public static void main(String[] args) throws Exception {
         String url = "http://ifconfig.me/all.json";
-        URL obj = new URL(url);
+        URL obj = URI.create(url).toURL();
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         con.setRequestMethod("GET");
 
