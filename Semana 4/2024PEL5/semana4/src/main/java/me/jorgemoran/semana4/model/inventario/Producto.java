@@ -17,6 +17,10 @@ public class Producto implements Comparable<Producto>{
     public double getPrecio() { return precio; }
     public int getStock() { return stock; }
 
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
     @Override
     public int compareTo(Producto otro) {
         return Double.compare(this.precio, otro.precio);
