@@ -1,4 +1,6 @@
 package me.jorgemoran.semana4.model.inventario;
+import me.jorgemoran.semana4.model.inventario.delegate.ComparadorProductoPorStock;
+
 import java.util.Comparator;
 import  java.util.List;
 import java.util.ArrayList;
@@ -56,7 +58,18 @@ public class Tienda {
         }
         return resultado;
     }
+    public List<Producto> obtenerProductosConMenorStock(int cantidad) {
+        // Creamos una copia para no modificar la lista original
+        List<Producto> ordenados = new ArrayList<>(productos);
+        Collections.sort(ordenados, new ComparadorProductoPorStock());
 
+        // Devolvemos los primeros 'cantidad' productos
+        List<Producto> resultado = new ArrayList<>();
+        for (int i = 0; i < Math.min(cantidad, ordenados.size()); i++) {
+            resultado.add(ordenados.get(i));
+        }
+        return resultado;
+    }
     public static void main(String [] args){
         Tienda t = new Tienda();
         t.agregarProducto(new Producto("Coca Cola",0.8,20));
@@ -69,6 +82,11 @@ public class Tienda {
             System.out.println(p);
         }
         t.mostrarCatalogoOrdenado();
+        List<Producto> ordenados2 = t.obtenerProductosConMenorStock(3);
+        System.out.println("----- Productos con menor stock: ----");
+        for(Producto p: ordenados2){
+            System.out.println(p);
+        }
 
     }
 }
